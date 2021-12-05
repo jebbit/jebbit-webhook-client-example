@@ -2,7 +2,7 @@
 
 require 'openssl'
 
-TOLERANCE = 5
+TOLERANCE = 300
 
 class JebbitWebhooksService
   attr_reader :body, :shared_secret, :signature, :timestamp, :hmac
