@@ -1,7 +1,0 @@
-{
-    "ruby.rubocop.useBundler": true,
-    "ruby.rubocop.executePath": "/Users/matt/.rvm/gems/ruby-3.0.1@jebbit-webhook-client-example/bin/",
-    "editor.formatOnSave": true,
-    "ruby.format": "rubocop",
-    "ruby.rubocop.onSave": true
-  }
