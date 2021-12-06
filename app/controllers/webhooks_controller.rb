@@ -9,6 +9,12 @@ class WebhooksController < ApplicationController
 
     return head :forbidden unless webhooks_service.verify_signature
 
+    if request.headers['x-jebbit-test']
+      # do not persist data
+    else
+      # continue processing and persisting data
+    end
+
     head :ok
   rescue StandardError
     head :bad_request

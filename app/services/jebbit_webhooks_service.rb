@@ -27,7 +27,6 @@ class JebbitWebhooksService
     calculated_hmac = Base64.strict_encode64(
       OpenSSL::HMAC.digest('sha256', @shared_secret, generated_payload)
     )
-
     ActiveSupport::SecurityUtils.secure_compare(@hmac, calculated_hmac)
   end
 
