@@ -6,7 +6,10 @@ class WebhooksController < ApplicationController
     signature = request.headers['x-jebbit-signature']
 
     Rails.logger.info("Request Headers:")
-    Rails.logger.info(request.headers.to_json)
+    headers = request.env.select {|k,v|
+      k.match("^HTTP.*|^CONTENT.*|^REMOTE.*|^REQUEST.*|^AUTHORIZATION.*|^SCRIPT.*|^SERVER.*")
+    }
+    Rails.logger.info(headers.to_json)
 
     Rails.logger.info("Request Body:")
     Rails.logger.info(body.to_json)
