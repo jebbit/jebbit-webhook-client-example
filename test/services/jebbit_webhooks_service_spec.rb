@@ -6,7 +6,7 @@ describe 'JebbitWebhooksService' do
   subject { described_class }
 
   before do
-    allow(Rails.application.credentials).to receive(:jebbit).and_return({ webhook_shared_secret: SHARED_SECRET })
+    allow(ENV).to receive(:WEBHOOK_SHARED_SECRET).and_return(SHARED_SECRET)
   end
 
   context 'when given a body and signature' do

@@ -8,7 +8,7 @@ class JebbitWebhooksService
   attr_reader :body, :shared_secret, :signature, :timestamp, :hmac
 
   def initialize(body, signature)
-    @shared_secret = Rails.application.credentials.jebbit[:webhook_shared_secret]
+    @shared_secret = ENV['WEBHOOK_SHARED_SECRET']
     @body = body
     @signature = signature
 
