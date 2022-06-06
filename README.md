@@ -1,24 +1,21 @@
-# README
+# Jebbit Webhook Client Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An example rails application that can receive & verify Jebbit webhooks. 
 
-Things you may want to cover:
+See the [full documentation](https://jebbit-public-api-docs.s3.amazonaws.com/index.html) for more information.
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## Setup
 
-* Database creation
+Ensure ruby 3 is installed and then `bundle install` to install required gems. 
 
-* Database initialization
+Run `rails s` to start the server. 
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Important Files
 
-* ...
+`app/controllers/webhooks_controller.rb` -> controller that receives webhooks
+`app/services/jebbit_webhooks_service.rb` -> service class that validates the webhook's signature
+
